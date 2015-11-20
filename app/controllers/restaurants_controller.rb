@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find([:id])
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def new
@@ -14,28 +14,35 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
 
-    respond_to do |format|
-      if @restaurant.save
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
-        format.json { render :show, status: :created, location: @restaurant }
-      else
-        format.html { render :new }
-        format.json { render json: @restaurant.errors, status: :unprocessable_entity }
-      end
+    if @restaurant.save
+      redirect_to action: :show, id: @restaurant.id
+    else
+      redirect_to action: :new
     end
   end
 
   def edit
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def update
+    @restaurant = Restaurant.find(params[:id])
+    if @restaurant.update_attributes(restaurant_params)
+      redirect_to action: :show, id: @restaurant.id
+    else
+      redirect_to action: :update, id: @restaurant.id
+    end
   end
 
   def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
+    redirect_to action: :index
   end
 
   private
   def restaurant_params
     params.require(:restaurant).permit(:name, :description, :street, :city, :state, :zip, :phone)
   end
+
 end

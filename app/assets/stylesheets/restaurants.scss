@@ -7,8 +7,8 @@ body {
 }
 #field {
 	background-color: #97FFEF;
-	padding:10px;
-	border:none;
+	padding:20px;
+  /*border:none;*/
 }
 
 .button-submit {
@@ -27,4 +27,8 @@ body {
 
 .form-label {
 	font:Helvetica;
+}
+
+table#restaurant td {
+  padding: 10px;
 }

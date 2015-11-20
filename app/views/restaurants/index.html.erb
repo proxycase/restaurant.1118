@@ -13,6 +13,12 @@
 	<td><%= r.description %></td>
 	<td><%= r.full_address %></td>
 	<td><%= r.phone %></td>
+  <td><%= link_to 'Details', restaurant_path(r) %></td>
+  <td><%= link_to 'Edit', edit_restaurant_path(r) %></td>
+  <td><%= link_to 'Delete', r, method: :delete, data: {
+    confirm: "Are you sure?"
+  } %>
+</td>
 </tr>
 <% end %>
 </table>
