@@ -1,0 +1,29 @@
+<h1>Restly</h1>
+<p>Welcome</p>
+
+<table id="restaurant">
+<th>Name</th>
+<th>Description</th>
+<th>Address</th>
+<th>Phone</th>
+
+<% @restaurant.each do |r| %>
+<tr>
+	<td><%= r.name %></td>
+	<td><%= r.description %></td>
+	<td><%= r.full_address %></td>
+	<td><%= r.phone %></td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to "Create New Restaurant", new_restaurant_path %>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>

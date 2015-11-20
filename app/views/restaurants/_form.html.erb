@@ -1,0 +1,25 @@
+<%= form_for @restaurant do |f| %>
+  <%= f.label :name, id: "form-label"%></br>
+  <%= f.text_field :name, id: "field" %></br>
+  <%= f.label :description, id: "form-label" %></br>
+  <%= f.text_area :description, id: "field" %></br>
+  <%= f.label :street, id: "form-label" %></br>
+  <%= f.text_field :street, id: "field"%></br>
+  <%= f.label :city, id: "form-label" %></br>
+  <%= f.text_field :city, id: "field"%></br>
+  <%= f.label :state, id: "form-label" %></br>
+  <%= f.text_field :state, id: "field"%></br>
+  <%= f.label :zip, id: "form-label" %></br>
+  <%= f.text_field :zip, id: "field"%></br>
+  <%= f.label :phone, id: "form-label" %></br>
+  <%= f.text_field :phone, id: "field"%></br>
+  <p>
+	<%= f.submit class: "button-submit"%></p>
+<% end %>
+
+
+<!-- 
+method arg, arg2, {}
+method(arg, arg2, {})
+method(arg).method arg, arg2, {}
+merthod(arg).method(arg, arg2, {}) -->

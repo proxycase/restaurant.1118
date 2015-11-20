@@ -1,0 +1,30 @@
+// Place all the styles related to the Restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font: small-caps normal 16px/1.4 "Gill Sans";
+}
+#field {
+	background-color: #97FFEF;
+	padding:10px;
+	border:none;
+}
+
+.button-submit {
+  color: #ffffff;
+  font-size: 20px;
+  background: #a8cbe3;
+  padding: 18px 25px 18px 25px;
+  text-decoration: none;
+  border:none;
+}
+
+.button-submit:hover {
+  background: #ade0ff;
+  text-decoration: none;
+}
+
+.form-label {
+	font:Helvetica;
+}
